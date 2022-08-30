@@ -35,5 +35,5 @@ public @interface Retry {
     /**
      * Optional reason for the usage. Purely for informational purposes.
      */
-    String reason() default "";
+    String because() default "";
 }

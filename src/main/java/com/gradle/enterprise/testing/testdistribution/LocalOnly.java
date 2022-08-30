@@ -36,5 +36,5 @@ public @interface LocalOnly {
     /**
      * Optional reason for this restriction. Purely for informational purposes.
      */
-    String reason() default "";
+    String because() default "";
 }

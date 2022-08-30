@@ -7,7 +7,7 @@ the standalone https://github.com/gradle/test-retry-gradle-plugin[Test Retry Plu
 
 == Annotations
 
-All annotations have an optional `reason` attribute to explain why the annotation is present.
+All annotations have an optional `because` attribute to explain why the annotation is present.
 
 === Predictive Test Selection
 

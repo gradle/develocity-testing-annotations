@@ -36,5 +36,5 @@ public @interface MustRun {
     /**
      * Optional reason for why this test must always be executed. Purely for informational purposes.
      */
-    String reason() default "";
+    String because() default "";
 }
