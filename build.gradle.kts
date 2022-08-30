@@ -14,7 +14,6 @@ java {
 }
 
 nexusPublishing {
-    packageGroup.set("org.gradle")
     repositories {
         sonatype {
             // https://central.sonatype.org/news/20210223_new-users-on-s01/
