@@ -1,0 +1,43 @@
+= Gradle Enterprise Testing Annotations
+
+Common annotations for https://gradle.com/[Gradle Enterprise]'s
+https://docs.gradle.com/enterprise/predictive-test-selection/[Predictive Test Selection] and
+https://docs.gradle.com/enterprise/test-distribution/[Test Distribution] as well as
+the standalone https://github.com/gradle/test-retry-gradle-plugin[Test Retry Plugin].
+
+== Annotations
+
+All annotations have an optional `because` attribute to explain why the annotation is present.
+
+=== Predictive Test Selection
+
+* `@MustRun` - indicates that the test must be run.
+
+=== Test Distribution
+
+* `@LocalOnly` - indicates that the test must be run locally.
+* `@RemoteOnly` - indicates that the test must be run remotely.
+
+=== Test Retry Plugin
+
+* `@Retry` - indicates that the test should be retried.
+* `@NoRetry` - indicates that the test must not be retried.
+
+== Usage
+
+.Gradle
+[source,kotlin]
+----
+testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.0")
+----
+
+.Maven
+[source,xml]
+----
+<dependency>
+    <groupId>com.gradle</groupId>
+    <artifactId>gradle-enterprise-testing-annotations</artifactId>
+    <version>1.0</version>
+    <scope>test</scope>
+</dependency>
+----
