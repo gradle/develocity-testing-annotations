@@ -8,6 +8,7 @@ the standalone https://github.com/gradle/test-retry-gradle-plugin[Test Retry Plu
 == Annotations
 
 All annotations have an optional `because` attribute to explain why the annotation is present.
+The annotations are located in the `com.gradle.enterprise.testing.annotations` package.
 
 === Predictive Test Selection
 
@@ -40,4 +41,106 @@ testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.0")
     <version>1.0</version>
     <scope>test</scope>
 </dependency>
+----
+
+== Configuration
+
+=== Predictive Test Selection
+For Gradle see https://docs.gradle.com/enterprise/predictive-test-selection/#must_run_annotation_matcher[Must Run Annotation Matcher] chapter for details.
+
+[source,kotlin]
+----
+tasks.test {
+    useJUnitPlatform()
+    predictiveSelection {
+        enabled.set(true)
+        mustRun {
+            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.MustRun")
+        }
+    }
+}
+----
+
+For Maven see the https://docs.gradle.com/enterprise/predictive-test-selection/#must_run_annotation_matcher_2[Must Run Annotation Matcher] chapter for details.
+
+[source,xml]
+----
+<plugin>
+  <artifactId>maven-surefire-plugin</artifactId>
+  <version>3.0.0-M7</version>
+  <configuration>
+    <properties>
+      <predictiveSelection>
+        <enabled>true</enabled>
+        <mustRun>
+          <includeAnnotationClasses>
+            <include>com.gradle.enterprise.testing.annotations.MustRun</include>
+          </includeAnnotationClasses>
+        </mustRun>
+      </predictiveSelection>
+    </properties>
+  </configuration>
+</plugin>
+----
+
+=== Test Distribution
+For Gradle see https://docs.gradle.com/enterprise/test-distribution/#gradle_executor_restrictions_annotation_matcher[Local-/remote-only annotation matcher] chapter for details.
+
+[source,kotlin]
+----
+tasks.test {
+    distribution {
+        enabled.set(true)
+        localOnly {
+            includeAnnotationClasses.addAll("com.gradle.enterprise.testing.annotations.LocalOnly")
+        }
+        remoteOnly {
+            includeAnnotationClasses.addAll("com.gradle.enterprise.testing.annotations.RemoteOnly")
+        }
+    }
+}
+----
+
+For Maven see the https://docs.gradle.com/enterprise/test-distribution/#maven_executor_restrictions_annotation_matcher[Local-/remote-only annotation matcher] chapter for details.
+
+[source,xml]
+----
+
+
+<plugin>
+  <artifactId>maven-surefire-plugin</artifactId>
+  <version>3.0.0-M7</version>
+  <configuration>
+    <properties>
+      <distribution>
+        <enabled>true</enabled>
+        <localOnly>
+          <includeAnnotationClasses>
+            <include>com.gradle.enterprise.testing.annotations.LocalOnly</include>
+          </includeAnnotationClasses>
+        </localOnly>
+        <remoteOnly>
+          <includeAnnotationClasses>
+            <include>com.gradle.enterprise.testing.annotations.RemoteOnly</include>
+          </includeAnnotationClasses>
+        </remoteOnly>
+      </distribution>
+    </properties>
+  </configuration>
+</plugin>
+----
+
+=== Test Retry Plugin
+See the https://github.com/gradle/test-retry-gradle-plugin#filtering[Filtering] chapter for details.
+
+[source,kotlin]
+----
+tasks.test {
+    retry {
+        filter {
+            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.Retry")
+            excludeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.NoRetry")
+        }
+    }
+}
 ----
