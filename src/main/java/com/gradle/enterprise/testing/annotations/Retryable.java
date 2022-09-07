@@ -31,7 +31,7 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Retry {
+public @interface Retryable {
     /**
      * Optional reason for the usage. Purely for informational purposes.
      */

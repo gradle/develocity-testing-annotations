@@ -21,8 +21,8 @@ The annotations are located in the `com.gradle.enterprise.testing.annotations` p
 
 === Test Retry Plugin
 
-* `@Retry` - indicates that the test should be retried.
-* `@NoRetry` - indicates that the test must not be retried.
+* `@Retryable` - indicates that the test should be retried.
+* `@NonRetryable` - indicates that the test must not be retried.
 
 == Usage
 
@@ -138,8 +138,8 @@ See the https://github.com/gradle/test-retry-gradle-plugin#filtering[Filtering] 
 tasks.test {
     retry {
         filter {
-            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.Retry")
-            excludeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.NoRetry")
+            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.Retryable")
+            excludeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.NonRetryable")
         }
     }
 }
