@@ -46,6 +46,7 @@ testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.0")
 == Configuration
 
 === Predictive Test Selection
+A future Gradle Enterprise version will have integrated support for this annotation.
 For Gradle see https://docs.gradle.com/enterprise/predictive-test-selection/#must_run_annotation_matcher[Must Run Annotation Matcher] chapter for details.
 
 [source,kotlin]
@@ -84,6 +85,7 @@ For Maven see the https://docs.gradle.com/enterprise/predictive-test-selection/#
 ----
 
 === Test Distribution
+A future Gradle Enterprise version will have integrated support for these annotations.
 For Gradle see https://docs.gradle.com/enterprise/test-distribution/#gradle_executor_restrictions_annotation_matcher[Local-/remote-only annotation matcher] chapter for details.
 
 [source,kotlin]
@@ -131,6 +133,7 @@ For Maven see the https://docs.gradle.com/enterprise/test-distribution/#maven_ex
 ----
 
 === Test Retry Plugin
+A future Test Retry Plugin version will have integrated support for these annotations.
 See the https://github.com/gradle/test-retry-gradle-plugin#filtering[Filtering] chapter for details.
 
 [source,kotlin]
