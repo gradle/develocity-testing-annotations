@@ -133,7 +133,6 @@ For Maven see the https://docs.gradle.com/enterprise/test-distribution/#maven_ex
 ----
 
 === Test Retry Plugin
-A future Test Retry Plugin version will have integrated support for these annotations.
 See the https://github.com/gradle/test-retry-gradle-plugin#filtering[Filtering] chapter for details.
 
 [source,kotlin]
