@@ -135,13 +135,29 @@ For Maven see the https://docs.gradle.com/enterprise/test-distribution/#maven_ex
 === Test Retry Plugin
 See the https://github.com/gradle/test-retry-gradle-plugin#filtering[Filtering] chapter for details.
 
+==== Opt-out mode
+With this configuration every class not annotated with `@NonRetryable` will be retried if it fails.
+[source,kotlin]
+----
+tasks.test {
+    retry {
+        filter {
+            excludeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.NonRetryable")
+        }
+    }
+}
+----
+
+==== Opt-in mode
+
+With this configuration only the classes annotated with `@Retryable` will be retried if they fail.
+
 [source,kotlin]
 ----
 tasks.test {
     retry {
         filter {
             includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.Retryable")
-            excludeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.NonRetryable")
         }
     }
 }
