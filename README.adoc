@@ -46,7 +46,8 @@ testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.0")
 == Configuration
 
 === Predictive Test Selection
-A future Gradle Enterprise version will have integrated support for this annotation.
+The Gradle Enterprise Gradle plugin version 3.12 or higher has built-in support for the `@MustRun` annotation.
+
 For Gradle see https://docs.gradle.com/enterprise/predictive-test-selection/#must_run_annotation_matcher[Must Run Annotation Matcher] chapter for details.
 
 [source,kotlin]
@@ -61,6 +62,8 @@ tasks.test {
     }
 }
 ----
+
+The Gradle Enterprise Maven extension version 1.16 or higher has built-in support for the `@MustRun` annotation.
 
 For Maven see the https://docs.gradle.com/enterprise/predictive-test-selection/#must_run_annotation_matcher_2[Must Run Annotation Matcher] chapter for details.
 
@@ -85,7 +88,8 @@ For Maven see the https://docs.gradle.com/enterprise/predictive-test-selection/#
 ----
 
 === Test Distribution
-A future Gradle Enterprise version will have integrated support for these annotations.
+The Gradle Enterprise Gradle plugin version 3.12 or higher has built-in support for these annotations.
+
 For Gradle see https://docs.gradle.com/enterprise/test-distribution/#gradle_executor_restrictions_annotation_matcher[Local-/remote-only annotation matcher] chapter for details.
 
 [source,kotlin]
@@ -102,6 +106,8 @@ tasks.test {
     }
 }
 ----
+
+The Gradle Enterprise Maven extension version 1.16 or higher has built-in support for these annotations.
 
 For Maven see the https://docs.gradle.com/enterprise/test-distribution/#maven_executor_restrictions_annotation_matcher[Local-/remote-only annotation matcher] chapter for details.
 
