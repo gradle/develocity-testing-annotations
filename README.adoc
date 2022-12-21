@@ -29,7 +29,7 @@ The annotations are located in the `com.gradle.enterprise.testing.annotations` p
 .Gradle
 [source,kotlin]
 ----
-testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.0")
+testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.1")
 ----
 
 .Maven
@@ -38,7 +38,7 @@ testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.0")
 <dependency>
     <groupId>com.gradle</groupId>
     <artifactId>gradle-enterprise-testing-annotations</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <scope>test</scope>
 </dependency>
 ----
