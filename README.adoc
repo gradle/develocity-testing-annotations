@@ -168,3 +168,38 @@ tasks.test {
     }
 }
 ----
+
+==== Retry on class-level (since 1.1)
+
+By default, individual tests are retried.
+The classRetry component of the test retry extension can be used to control which test classes must be retried as a whole unit.
+Test classes still have to pass the configured filter, as this annotation does not imply `@Retryable` by default.
+
+The Test Retry Gradle plugin version 1.5.0 or higher has built-in support for `@ClassRetry`.
+
+[source,kotlin]
+----
+tasks.test {
+    retry {
+        classRetry {
+            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.ClassRetry")
+        }
+    }
+}
+----
+
+===== Combining with Opt-in mode
+
+You can also combine configure `@ClassRetry` act as opt-in marker.
+
+[source,kotlin]
+----
+tasks.test {
+    retry {
+        filter {
+            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.Retryable")
+            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.ClassRetry")
+        }
+    }
+}
+----
