@@ -17,7 +17,8 @@
  *
  */
 
-package com.develocity.testing.annotations;
+package com.gradle.develocity.testing.annotations;
+
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -25,19 +26,15 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation to indicate that a test should be retried on the class level.
+ * Annotation to indicate that a test should be run only on local executors.
  * <p>
- *     This annotation does not imply {@link Retryable} unless configured explicitly.
- * <p>
- * Works only in conjunction with the test <a href="https://github.com/gradle/test-retry-gradle-plugin">test-retry-gradle-plugin</a>.
- *
- * @since 1.1
+ * Works only in conjunction with <a href="https://docs.gradle.com/enterprise/test-distribution/">test distribution</a>.
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ClassRetry {
+public @interface LocalOnly {
     /**
-     * Optional reason for the usage. Purely for informational purposes.
+     * Optional reason for this restriction. Purely for informational purposes.
      *
      * @return reason string
      */

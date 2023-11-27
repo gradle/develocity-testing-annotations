@@ -58,7 +58,7 @@ tasks.test {
     predictiveSelection {
         enabled.set(true)
         mustRun {
-            includeAnnotationClasses.add("com.develocity.testing.annotations.MustRun")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.MustRun")
         }
     }
 }
@@ -79,7 +79,7 @@ For Maven see the https://docs.gradle.com/enterprise/predictive-test-selection/#
         <enabled>true</enabled>
         <mustRun>
           <includeAnnotationClasses>
-            <include>com.develocity.testing.annotations.MustRun</include>
+            <include>com.gradle.develocity.testing.annotations.MustRun</include>
           </includeAnnotationClasses>
         </mustRun>
       </predictiveSelection>
@@ -99,10 +99,10 @@ tasks.test {
     distribution {
         enabled.set(true)
         localOnly {
-            includeAnnotationClasses.addAll("com.develocity.testing.annotations.LocalOnly")
+            includeAnnotationClasses.addAll("com.gradle.develocity.testing.annotations.LocalOnly")
         }
         remoteOnly {
-            includeAnnotationClasses.addAll("com.develocity.testing.annotations.RemoteOnly")
+            includeAnnotationClasses.addAll("com.gradle.develocity.testing.annotations.RemoteOnly")
         }
     }
 }
@@ -125,12 +125,12 @@ For Maven see the https://docs.gradle.com/enterprise/test-distribution/#maven_ex
         <enabled>true</enabled>
         <localOnly>
           <includeAnnotationClasses>
-            <include>com.develocity.testing.annotations.LocalOnly</include>
+            <include>com.gradle.develocity.testing.annotations.LocalOnly</include>
           </includeAnnotationClasses>
         </localOnly>
         <remoteOnly>
           <includeAnnotationClasses>
-            <include>com.develocity.testing.annotations.RemoteOnly</include>
+            <include>com.gradle.develocity.testing.annotations.RemoteOnly</include>
           </includeAnnotationClasses>
         </remoteOnly>
       </distribution>
@@ -149,7 +149,7 @@ With this configuration every class not annotated with `@NonRetryable` will be r
 tasks.test {
     retry {
         filter {
-            excludeAnnotationClasses.add("com.develocity.testing.annotations.NonRetryable")
+            excludeAnnotationClasses.add("com.gradle.develocity.testing.annotations.NonRetryable")
         }
     }
 }
@@ -164,7 +164,7 @@ With this configuration only the classes annotated with `@Retryable` will be ret
 tasks.test {
     retry {
         filter {
-            includeAnnotationClasses.add("com.develocity.testing.annotations.Retryable")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.Retryable")
         }
     }
 }
@@ -183,7 +183,7 @@ The Test Retry Gradle plugin version 1.5.0 or higher has built-in support for `@
 tasks.test {
     retry {
         classRetry {
-            includeAnnotationClasses.add("com.develocity.testing.annotations.ClassRetry")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.ClassRetry")
         }
     }
 }
@@ -198,8 +198,8 @@ You can also combine configure `@ClassRetry` act as opt-in marker.
 tasks.test {
     retry {
         filter {
-            includeAnnotationClasses.add("com.develocity.testing.annotations.Retryable")
-            includeAnnotationClasses.add("com.develocity.testing.annotations.ClassRetry")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.Retryable")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.ClassRetry")
         }
     }
 }

@@ -17,7 +17,7 @@
  *
  */
 
-package com.develocity.testing.annotations;
+package com.gradle.develocity.testing.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

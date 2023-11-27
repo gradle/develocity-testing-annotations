@@ -17,7 +17,8 @@
  *
  */
 
-package com.develocity.testing.annotations;
+package com.gradle.develocity.testing.annotations;
+
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -25,15 +26,15 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation to indicate that a test should be retried if it fails.
+ * Annotation to indicate that a test should always be selected by predictive test selection.
  * <p>
- * Works only in conjunction with the test <a href="https://github.com/gradle/test-retry-gradle-plugin">test-retry-gradle-plugin</a>.
+ * Works only in conjunction with <a href="https://docs.gradle.com/enterprise/predictive-test-selection/">predictive test selection</a>.
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Retryable {
+public @interface MustRun {
     /**
-     * Optional reason for the usage. Purely for informational purposes.
+     * Optional reason for why this test must always be executed. Purely for informational purposes.
      *
      * @return reason string
      */
