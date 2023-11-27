@@ -1,6 +1,6 @@
 pluginManagement {
     plugins {
-        id("com.gradle.enterprise") version "3.11.1"
+        id("com.gradle.enterprise") version "3.15.1"
         id("com.gradle.enterprise.gradle-enterprise-conventions-plugin") version "0.7.4"
         id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
     }
@@ -18,4 +18,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "gradle-enterprise-testing-annotations"
+rootProject.name = "develocity-testing-annotations"

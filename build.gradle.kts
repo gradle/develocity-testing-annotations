@@ -29,8 +29,8 @@ publishing {
         from(components["java"])
 
         pom {
-            name.set("Gradle Enterprise Testing Annotations")
-            description.set("Common annotations for Gradle Enterprise Testing.")
+            name.set("Develocity Testing Annotations")
+            description.set("Common annotations for Develocity Testing.")
             url.set("https://github.com/gradle/gradle-enterprise-testing-annotations/")
             licenses {
                 license {

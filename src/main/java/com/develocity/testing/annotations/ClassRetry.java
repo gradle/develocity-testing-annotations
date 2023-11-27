@@ -17,7 +17,7 @@
  *
  */
 
-package com.gradle.enterprise.testing.annotations;
+package com.develocity.testing.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -38,6 +38,8 @@ import java.lang.annotation.Target;
 public @interface ClassRetry {
     /**
      * Optional reason for the usage. Purely for informational purposes.
+     *
+     * @return reason string
      */
     String because() default "";
 }
