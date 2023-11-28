@@ -30,7 +30,7 @@ The annotations are located in the `com.develocity.testing.annotations` package.
 .Gradle
 [source,kotlin]
 ----
-testImplementation("com.gradle:develocity-testing-annotations:1.2")
+testImplementation("com.gradle:develocity-testing-annotations:2.0")
 ----
 
 .Maven
@@ -39,7 +39,7 @@ testImplementation("com.gradle:develocity-testing-annotations:1.2")
 <dependency>
     <groupId>com.gradle</groupId>
     <artifactId>develocity-testing-annotations</artifactId>
-    <version>1.2</version>
+    <version>2.0</version>
     <scope>test</scope>
 </dependency>
 ----
