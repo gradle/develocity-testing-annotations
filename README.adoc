@@ -1,6 +1,6 @@
-= Gradle Enterprise Testing Annotations
+= Develocity Testing Annotations
 
-Common annotations for https://gradle.com/[Gradle Enterprise]'s
+Common annotations for https://gradle.com/[Develocity]'s
 https://docs.gradle.com/enterprise/predictive-test-selection/[Predictive Test Selection] and
 https://docs.gradle.com/enterprise/test-distribution/[Test Distribution] as well as
 the standalone https://github.com/gradle/test-retry-gradle-plugin[Test Retry Plugin].
@@ -8,7 +8,7 @@ the standalone https://github.com/gradle/test-retry-gradle-plugin[Test Retry Plu
 == Annotations
 
 All annotations have an optional `because` attribute to explain why the annotation is present.
-The annotations are located in the `com.gradle.enterprise.testing.annotations` package.
+The annotations are located in the `com.develocity.testing.annotations` package.
 
 === Predictive Test Selection
 
@@ -30,7 +30,7 @@ The annotations are located in the `com.gradle.enterprise.testing.annotations` p
 .Gradle
 [source,kotlin]
 ----
-testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.1")
+testImplementation("com.gradle:develocity-testing-annotations:2.0")
 ----
 
 .Maven
@@ -38,8 +38,8 @@ testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.1")
 ----
 <dependency>
     <groupId>com.gradle</groupId>
-    <artifactId>gradle-enterprise-testing-annotations</artifactId>
-    <version>1.1</version>
+    <artifactId>develocity-testing-annotations</artifactId>
+    <version>2.0</version>
     <scope>test</scope>
 </dependency>
 ----
@@ -47,7 +47,7 @@ testImplementation("com.gradle:gradle-enterprise-testing-annotations:1.1")
 == Configuration
 
 === Predictive Test Selection
-The Gradle Enterprise Gradle plugin version 3.12 or higher has built-in support for the `@MustRun` annotation.
+The Develocity Gradle plugin version 3.12 or higher has built-in support for the `@MustRun` annotation.
 
 For Gradle see https://docs.gradle.com/enterprise/predictive-test-selection/#must_run_annotation_matcher[Must Run Annotation Matcher] chapter for details.
 
@@ -58,13 +58,13 @@ tasks.test {
     predictiveSelection {
         enabled.set(true)
         mustRun {
-            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.MustRun")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.MustRun")
         }
     }
 }
 ----
 
-The Gradle Enterprise Maven extension version 1.16 or higher has built-in support for the `@MustRun` annotation.
+The Develocity Maven extension version 1.16 or higher has built-in support for the `@MustRun` annotation.
 
 For Maven see the https://docs.gradle.com/enterprise/predictive-test-selection/#must_run_annotation_matcher_2[Must Run Annotation Matcher] chapter for details.
 
@@ -79,7 +79,7 @@ For Maven see the https://docs.gradle.com/enterprise/predictive-test-selection/#
         <enabled>true</enabled>
         <mustRun>
           <includeAnnotationClasses>
-            <include>com.gradle.enterprise.testing.annotations.MustRun</include>
+            <include>com.gradle.develocity.testing.annotations.MustRun</include>
           </includeAnnotationClasses>
         </mustRun>
       </predictiveSelection>
@@ -89,7 +89,7 @@ For Maven see the https://docs.gradle.com/enterprise/predictive-test-selection/#
 ----
 
 === Test Distribution
-The Gradle Enterprise Gradle plugin version 3.12 or higher has built-in support for these annotations.
+The Develocity Gradle plugin version 3.12 or higher has built-in support for these annotations.
 
 For Gradle see https://docs.gradle.com/enterprise/test-distribution/#gradle_executor_restrictions_annotation_matcher[Local-/remote-only annotation matcher] chapter for details.
 
@@ -99,16 +99,16 @@ tasks.test {
     distribution {
         enabled.set(true)
         localOnly {
-            includeAnnotationClasses.addAll("com.gradle.enterprise.testing.annotations.LocalOnly")
+            includeAnnotationClasses.addAll("com.gradle.develocity.testing.annotations.LocalOnly")
         }
         remoteOnly {
-            includeAnnotationClasses.addAll("com.gradle.enterprise.testing.annotations.RemoteOnly")
+            includeAnnotationClasses.addAll("com.gradle.develocity.testing.annotations.RemoteOnly")
         }
     }
 }
 ----
 
-The Gradle Enterprise Maven extension version 1.16 or higher has built-in support for these annotations.
+The Develocity Maven extension version 1.16 or higher has built-in support for these annotations.
 
 For Maven see the https://docs.gradle.com/enterprise/test-distribution/#maven_executor_restrictions_annotation_matcher[Local-/remote-only annotation matcher] chapter for details.
 
@@ -125,12 +125,12 @@ For Maven see the https://docs.gradle.com/enterprise/test-distribution/#maven_ex
         <enabled>true</enabled>
         <localOnly>
           <includeAnnotationClasses>
-            <include>com.gradle.enterprise.testing.annotations.LocalOnly</include>
+            <include>com.gradle.develocity.testing.annotations.LocalOnly</include>
           </includeAnnotationClasses>
         </localOnly>
         <remoteOnly>
           <includeAnnotationClasses>
-            <include>com.gradle.enterprise.testing.annotations.RemoteOnly</include>
+            <include>com.gradle.develocity.testing.annotations.RemoteOnly</include>
           </includeAnnotationClasses>
         </remoteOnly>
       </distribution>
@@ -149,7 +149,7 @@ With this configuration every class not annotated with `@NonRetryable` will be r
 tasks.test {
     retry {
         filter {
-            excludeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.NonRetryable")
+            excludeAnnotationClasses.add("com.gradle.develocity.testing.annotations.NonRetryable")
         }
     }
 }
@@ -164,7 +164,7 @@ With this configuration only the classes annotated with `@Retryable` will be ret
 tasks.test {
     retry {
         filter {
-            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.Retryable")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.Retryable")
         }
     }
 }
@@ -183,7 +183,7 @@ The Test Retry Gradle plugin version 1.5.0 or higher has built-in support for `@
 tasks.test {
     retry {
         classRetry {
-            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.ClassRetry")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.ClassRetry")
         }
     }
 }
@@ -198,8 +198,8 @@ You can also combine configure `@ClassRetry` act as opt-in marker.
 tasks.test {
     retry {
         filter {
-            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.Retryable")
-            includeAnnotationClasses.add("com.gradle.enterprise.testing.annotations.ClassRetry")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.Retryable")
+            includeAnnotationClasses.add("com.gradle.develocity.testing.annotations.ClassRetry")
         }
     }
 }

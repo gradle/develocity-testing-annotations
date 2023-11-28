@@ -17,8 +17,7 @@
  *
  */
 
-package com.gradle.enterprise.testing.annotations;
-
+package com.gradle.develocity.testing.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -26,15 +25,17 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation to indicate that a test should be run only on local executors.
+ * Annotation to indicate that a test should be run only on remote executors.
  * <p>
  * Works only in conjunction with <a href="https://docs.gradle.com/enterprise/test-distribution/">test distribution</a>.
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface LocalOnly {
+public @interface RemoteOnly {
     /**
      * Optional reason for this restriction. Purely for informational purposes.
+     *
+     * @return reason string
      */
     String because() default "";
 }
