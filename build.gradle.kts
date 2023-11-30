@@ -31,7 +31,7 @@ publishing {
         pom {
             name.set("Develocity Testing Annotations")
             description.set("Common annotations for Develocity Testing.")
-            url.set("https://github.com/gradle/gradle-enterprise-testing-annotations/")
+            url.set("https://github.com/gradle/develocity-testing-annotations/")
             licenses {
                 license {
                     name.set("Apache-2.0")
@@ -46,9 +46,9 @@ publishing {
                 }
             }
             scm {
-                connection.set("scm:git:git://github.com/gradle/gradle-enterprise-testing-annotations.git")
-                developerConnection.set("scm:git:ssh://git@github.com:gradle/gradle-enterprise-testing-annotations.git")
-                url.set("https://github.com/gradle/gradle-enterprise-testing-annotations/")
+                connection.set("scm:git:git://github.com/gradle/develocity-testing-annotations.git")
+                developerConnection.set("scm:git:ssh://git@github.com:gradle/develocity-testing-annotations.git")
+                url.set("https://github.com/gradle/develocity-testing-annotations/")
             }
         }
     }
