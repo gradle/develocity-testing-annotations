@@ -9,7 +9,7 @@
 
     <name>Common Gradle Testing Annotations TeamCity Config DSL</name>
     <groupId>org.gradle</groupId>
-    <artifactId>gradle-enterprise-testing-annotations</artifactId>
+    <artifactId>develocity-testing-annotations</artifactId>
 
     <version>1.0-SNAPSHOT</version>
 
