@@ -8,7 +8,7 @@ the standalone https://github.com/gradle/test-retry-gradle-plugin[Test Retry Plu
 == Annotations
 
 All annotations have an optional `because` attribute to explain why the annotation is present.
-The annotations are located in the `com.develocity.testing.annotations` package.
+The annotations are located in the `com.gradle.develocity.testing.annotations` package.
 
 === Predictive Test Selection
 
