@@ -3,6 +3,7 @@ plugins {
     `maven-publish`
     signing
     id("io.github.gradle-nexus.publish-plugin")
+    id("biz.aQute.bnd.builder") version "6.4.0"
 }
 
 java {
@@ -57,4 +58,10 @@ publishing {
 signing {
     sign(publishing.publications["mavenJava"])
     useInMemoryPgpKeys(System.getenv("PGP_SIGNING_KEY"), System.getenv("PGP_SIGNING_KEY_PASSPHRASE"))
+}
+
+tasks.jar {
+    bundle.bnd(
+        "-exportcontents: *"
+    )
 }
