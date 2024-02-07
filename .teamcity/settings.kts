@@ -27,6 +27,8 @@ project {
             }
         }
         params {
+            param("env.JDK8", "%linux.java8.oracle.64bit%")
+            param("env.JAVA_HOME", "%linux.java21.openjdk.64bit%")
             param("env.ORG_GRADLE_PROJECT_sonatypeUsername", "%mavenCentralStagingRepoUser%")
             password("env.ORG_GRADLE_PROJECT_sonatypePassword", "%mavenCentralStagingRepoPassword%")
             password("env.PGP_SIGNING_KEY", "%pgpSigningKey%")
