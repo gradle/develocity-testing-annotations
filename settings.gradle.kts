@@ -2,7 +2,7 @@ pluginManagement {
     plugins {
         id("com.gradle.enterprise") version "3.17.5"
         id("com.gradle.enterprise.gradle-enterprise-conventions-plugin") version "0.7.5"
-        id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
+        id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     }
 }
 
