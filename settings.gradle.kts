@@ -39,10 +39,9 @@ buildCache {
     remote(develocity.buildCache) {
         server = "https://eu-build-cache.gradle.org"
         isEnabled = true
-        val accessKey = providers.environmentVariable("DEVELOCITY_ACCESS_KEY").orNull
-        isPush = providers.environmentVariable("DEVELOCITY_ACCESS_KEY").zip(isCi) { key, ci ->
+        isPush = providers.environmentVariable("DEVELOCITY_ACCESS_KEY").zip(isCI) { key, ci ->
     		key.isNotBlank()
-	}.orElse(false)
+	    }.getOrElse(false)
     }
 }
 
