@@ -23,7 +23,8 @@ jobs:
         with:
             distribution: 'temurin'
             java-version: 21
-      - name: 'Build'
+      - name: 'Set up Gradle'
         uses: gradle/actions/setup-gradle@v4
-        with:
-            arguments: "build"
+      - name: 'Build'
+        run: './gradlew build'
+
