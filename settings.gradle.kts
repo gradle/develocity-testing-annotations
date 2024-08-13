@@ -18,12 +18,12 @@ dependencyResolutionManagement {
     }
 }
 
-val isCI = providers.environmentVariable("CI")
+val isCI = providers.environmentVariable("CI").presence()
 
 develocity {
     server = "https://ge.gradle.org"
     buildScan {
-        uploadInBackground = isCI.map { false }.orElse(true)
+        uploadInBackground = isCI.not()
         publishing.onlyIf { it.isAuthenticated }
         obfuscation {
             ipAddresses { addresses -> addresses.map { "0.0.0.0" } }
@@ -39,10 +39,12 @@ buildCache {
     remote(develocity.buildCache) {
         server = "https://eu-build-cache.gradle.org"
         isEnabled = true
-        isPush = providers.environmentVariable("DEVELOCITY_ACCESS_KEY").zip(isCI) { key, ci ->
-    		key.isNotBlank()
-	    }.getOrElse(false)
+        val hasAccessKey = providers.environmentVariable("DEVELOCITY_ACCESS_KEY").map { it.isNotBlank() }.orElse(false)
+        isPush = hasAccessKey.zip(isCI) { accessKey, ci -> ci && accessKey }.get()
     }
 }
 
 rootProject.name = "develocity-testing-annotations"
+
+fun Provider<*>.presence(): Provider<Boolean> = map { true }.orElse(false)
+fun Provider<Boolean>.not(): Provider<Boolean> = map { !it }
