@@ -64,4 +64,7 @@ tasks.jar {
     bundle.bnd(
         "-exportcontents: *"
     )
+    from(file("LICENSE")) {
+        into("META-INF")
+    }
 }
