@@ -64,7 +64,10 @@ tasks.jar {
     bundle.bnd(
         "-exportcontents: *"
     )
-    from(file("LICENSE")) {
-        into("META-INF")
+}
+
+tasks.withType<Jar>().configureEach {
+    into(".") {
+        from(rootProject.layout.projectDirectory.file("../LICENSE"))
     }
 }
