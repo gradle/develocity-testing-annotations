@@ -65,3 +65,9 @@ tasks.jar {
         "-exportcontents: *"
     )
 }
+
+tasks.withType<Jar>().configureEach {
+    into(".") {
+        from(rootProject.layout.projectDirectory.file("../LICENSE"))
+    }
+}
