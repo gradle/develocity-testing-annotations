@@ -68,6 +68,6 @@ tasks.jar {
 
 tasks.withType<Jar>().configureEach {
     into(".") {
-        from(rootProject.layout.projectDirectory.file("../LICENSE"))
+        from(rootProject.layout.projectDirectory.file("LICENSE"))
     }
 }
