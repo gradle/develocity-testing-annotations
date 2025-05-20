@@ -1,7 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.gradle
 
-version = "2022.04"
+version = "2025.03"
 
 project {
     buildType{
