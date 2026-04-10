@@ -1,7 +1,7 @@
 pluginManagement {
     plugins {
         id("com.gradle.develocity") version "4.4.0"
-        id("com.gradle.common-custom-user-data-gradle-plugin") version "2.5.0"
+        id("com.gradle.common-custom-user-data-gradle-plugin") version "2.6.0"
         id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     }
 }
