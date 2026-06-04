@@ -3,7 +3,7 @@ plugins {
     `maven-publish`
     signing
     id("io.github.gradle-nexus.publish-plugin")
-    id("biz.aQute.bnd.builder") version "7.2.3"
+    id("biz.aQute.bnd.builder") version "7.3.0"
 }
 
 java {
