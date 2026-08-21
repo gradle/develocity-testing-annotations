@@ -31,6 +31,7 @@ project {
             param("env.JAVA_HOME", "%linux.java21.openjdk.64bit%")
             param("env.ORG_GRADLE_PROJECT_sonatypeUsername", "%mavenCentralStagingRepoUser%")
             password("env.ORG_GRADLE_PROJECT_sonatypePassword", "%mavenCentralStagingRepoPassword%")
+            param("env.PGP_SIGNING_KEY_ID", "%pgpSigningKeyId%")
             password("env.PGP_SIGNING_KEY", "%pgpSigningKey%")
             password("env.PGP_SIGNING_KEY_PASSPHRASE", "%pgpSigningPassphrase%")
         }
