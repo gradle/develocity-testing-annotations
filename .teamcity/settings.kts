@@ -37,6 +37,6 @@ project {
         }
     }
     params {
-        param("env.DEVELOCITY_ACCESS_KEY", "%ge.gradle.org.access.key%")
+        param("env.DEVELOCITY_ACCESS_KEY", "%gbt.public.develocity.access.key%")
     }
 }
