@@ -36,7 +36,4 @@ project {
             password("env.PGP_SIGNING_KEY_PASSPHRASE", "%pgpSigningPassphrase%")
         }
     }
-    params {
-        param("env.DEVELOCITY_ACCESS_KEY", "%ge.gradle.org.access.key%")
-    }
 }
